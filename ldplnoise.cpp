@@ -5,10 +5,10 @@
 using std::cout;
 using std::endl;
 
-void rl_accept() {
+void RL_ACCEPT() {
     linenoise::SetHistoryMaxLen(100);
     linenoise::SetMultiLine(true);
 
-    linenoise::Readline(rl_prompt.c_str(), rl_input);
-    linenoise::AddHistory(rl_input.c_str());
+    linenoise::Readline(RL_PROMPT.c_str(), RL_INPUT);
+    linenoise::AddHistory(RL_INPUT.c_str());
 }

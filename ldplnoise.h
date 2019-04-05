@@ -2,11 +2,11 @@
 
 using std::string;
 
-extern string VAR_RLr_UINPUT;
-extern string VAR_RLr_UPROMPT;
-void SUBPR_RLr_UACCEPT();
+extern string VAR_RLr_UINPUT;  // RL-INPUT
+extern string VAR_RLr_UPROMPT; // RL-PROMPT
+void SUBPR_RLr_UACCEPT();      // RL-ACCEPT
 
-#define rl_input  VAR_RLr_UINPUT
-#define rl_prompt VAR_RLr_UPROMPT
-#define rl_accept SUBPR_RLr_UACCEPT
+#define RL_INPUT  VAR_RLr_UINPUT
+#define RL_PROMPT VAR_RLr_UPROMPT
+#define RL_ACCEPT SUBPR_RLr_UACCEPT
 
