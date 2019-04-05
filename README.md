@@ -43,8 +43,8 @@ Then compile your LDPL project:
 
 You can test that the archive was created correctly by compiling `test.lsc` in this repo:
 
-        ldpl -i=ldplnoise.h test.lsc
-        ./test-bin
+    ldpl -i=ldplnoise.h test.lsc
+    ./test-bin
 
 Most likely you'll want to include this entire repo in your LDPL project and, in your build process, create an archive using the following commands:
 
