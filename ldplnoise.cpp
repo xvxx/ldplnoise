@@ -2,9 +2,6 @@
 #include "ldplnoise.h"
 #include "linenoise.hpp"
 
-using std::cout;
-using std::endl;
-
 void RL_ACCEPT() {
     linenoise::SetHistoryMaxLen(100);
     linenoise::SetMultiLine(true);
