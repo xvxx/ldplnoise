@@ -3,3 +3,4 @@ ldplnoise.o
 ldplnoise.a
 test-bin
 ldplnoise-test
+test-history
