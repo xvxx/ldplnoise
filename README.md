@@ -10,23 +10,24 @@ Only works on the `extensions` branch of https://github.com/dvkt/ldpl
 Usage
 -----
 
-For a readline-like prompt, first set the `RL-PROMPT` text variable to a prompt something then call the `RL-ACCEPT` subroutine:
+For readline-like behavior, first set the `RL-PROMPT` text variable to a prompt then call the `RL-ACCEPT` subroutine:
 
-    STORE "> " IN RL-PROMPT
+    STORE "Type something: " IN RL-PROMPT
     CALL RL-ACCEPT
 
 What the user inputs will be put into the `RL-INPUT` text variable:
 
     DISPLAY "You entered: " RL-INPUT CRLF
 
-To save and load history, first set the `RL-HISTORY-FILE` text  variable to the location of your history file, then use the  `RL-LOAD-HISTORY` and `RL-SAVE-HISTORY` subroutines:
+To save and load history, first set the `RL-HISTORY-FILE` text  variable to the location of your history file, then use the  `RL-LOAD-HISTORY` and `RL-SAVE-HISTORY` subroutines to load/save the history and the `RL-ADD-HISTORY` subroutine to add the value of `RL-INPUT` to the current history:
 
     STORE "history.txt" IN RL-HISTORY
     RL-LOAD-HISTORY
-
     # code that calls RL-ACCEPT
-    
+    RL-ADD-HISTORY
+    # then, before you exit:
     RL-SAVE-HISTORY
+
 
 Example
 -------
@@ -53,3 +54,4 @@ Subroutines:
     RL-ACCEPT
     RL-LOAD-HISTORY
     RL-SAVE-HISTORY
+    RL-ADD-HISTORY
