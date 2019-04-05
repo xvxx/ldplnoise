@@ -45,9 +45,9 @@ LDPL API
 
 Variables:
 
-    RL-PROMPT
-    RL-INPUT
-    RL-HISTORY-FILE
+    RL-PROMPT is TEXT
+    RL-INPUT is TEXT
+    RL-HISTORY-FILE is TEXT
 
 Subroutines:
 
