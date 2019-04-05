@@ -5,16 +5,23 @@ PROCEDURE:
 # XXX: need to make color work
 # STORE "\e[36;1mLDPLNOISE \e[35m>>> \e[0m" IN RL-PROMPT
 
-store -1 in CMDS:"quit"
-store -1 in CMDS:"exit"
+STORE -1 IN CMDS:"quit"
+STORE -1 IN CMDS:"exit"
+STORE  1 IN CMDS:"help"
+STORE  1 IN CMDS:"?"
 
-STORE ">>> " IN RL-PROMPT
 CALL RL-ACCEPT
 WHILE RL-INPUT IS NOT EQUAL TO "" DO
     IF CMDS:RL-INPUT IS EQUAL TO -1 THEN
         EXIT
     END IF
 
+    IF CMDS:RL-INPUT IS EQUAL TO 1 THEN
+        DISPLAY "commands: " crlf "\texit - exit" crlf "\thelp - show help" 
+        STORE " " IN RL-INPUT
+        CONTINUE
+    END IF 
+        
     DISPLAY RL-INPUT CRLF
     CALL RL-ACCEPT
 REPEAT
