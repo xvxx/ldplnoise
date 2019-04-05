@@ -1,3 +1,5 @@
+linenoise.o
 ldplnoise.o
 ldplnoise.a
 test-bin
+ldplnoise-test

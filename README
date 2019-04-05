@@ -1,0 +1,24 @@
+LDPLNOISE
+=========
+
+LDPL extension with linenoise support. linenoise is a lite version of
+readline, originally at https://github.com/antirez/linenoise.
+
+This version wraps https://github.com/yhirose/cpp-linenoise.
+
+Only works on the `extensions` branch of https://github.com/dvkt/ldpl
+
+Experimental extensions only work on Mac and Linux. 
+
+Usage
+-----
+
+    git clone https://github.com/dvkt/ldplnoise 
+    cd ldplnoise
+    make test
+
+This should launch you into a basic prompt that echos what you type
+and remembers you history for that session. To exit, just type 
+"quit" or "exit", submit an empty line, or hit Ctrl-C.
+
+
