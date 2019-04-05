@@ -1,15 +1,17 @@
+DATA:
+CMDS IS NUMBER VECTOR
+
 PROCEDURE:
 # XXX: need to make color work
 # STORE "\e[36;1mLDPLNOISE \e[35m>>> \e[0m" IN RL-PROMPT
 
+store -1 in CMDS:"quit"
+store -1 in CMDS:"exit"
+
 STORE ">>> " IN RL-PROMPT
 CALL RL-ACCEPT
 WHILE RL-INPUT IS NOT EQUAL TO "" DO
-    IF RL-INPUT IS EQUAL TO "quit" THEN
-        EXIT
-    END IF
-
-    IF RL-INPUT IS EQUAL TO "exit" THEN
+    IF CMDS:RL-INPUT IS EQUAL TO -1 THEN
         EXIT
     END IF
 
