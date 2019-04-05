@@ -2,8 +2,7 @@ DATA:
 CMDS IS NUMBER VECTOR
 
 PROCEDURE:
-# XXX: need to make color work
-# STORE "\e[36;1mLDPLNOISE \e[35m>>> \e[0m" IN RL-PROMPT
+STORE "\e[36;1mLDPLNOISE \e[35m>>> \e[0m" IN RL-PROMPT
 
 STORE -1 IN CMDS:"quit"
 STORE -1 IN CMDS:"exit"
