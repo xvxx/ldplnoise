@@ -22,18 +22,18 @@ What the user inputs will be put into the `RL-INPUT` text variable:
 To save and load history, first set the `RL-HISTORY-FILE` text  variable to the location of your history file, then use the  `RL-LOAD-HISTORY` and `RL-SAVE-HISTORY` subroutines to load/save the history and the `RL-ADD-HISTORY` subroutine to add the value of `RL-INPUT` to the current history:
 
     STORE "history.txt" IN RL-HISTORY
-    RL-LOAD-HISTORY
+    CALL RL-LOAD-HISTORY
     # code that calls RL-ACCEPT
-    RL-ADD-HISTORY
+    CALL RL-ADD-HISTORY
     # then, before you exit:
-    RL-SAVE-HISTORY
+    CALL RL-SAVE-HISTORY
 
 Setup
 -----
 
 To build a static archive for your platform, cd into this repo and run:
 
-    make 
+    make
 
 This will create `ldplnoise.a`. Copy that file and `ldplnoise.h` into your LDPL project's root directory.
 
@@ -57,7 +57,7 @@ Then pass -i=ldplnoise.h to `ldpl` when compiling your project.
 Example
 -------
 
-    git clone https://github.com/dvkt/ldplnoise 
+    git clone https://github.com/dvkt/ldplnoise
     cd ldplnoise
     make test
 
@@ -80,3 +80,4 @@ Subroutines:
     RL-LOAD-HISTORY
     RL-SAVE-HISTORY
     RL-ADD-HISTORY
+
