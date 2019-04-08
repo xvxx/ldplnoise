@@ -80,8 +80,8 @@ Variables:
 
 Subroutines:
 
-    RL-ACCEPT        # main readline()-like prompt function. 
-    RL-LOAD-HISTORY  # load command history from RL-HISTORY-FILE 
-    RL-SAVE-HISTORY  # save command history to RL-HISTORY-FFILE
-    RL-ADD-HISTORY   # add content of RL-INPUT to the history
-                     # should be called after RL-ACCEPT
+    RL-ACCEPT                # main readline()-like prompt function. 
+    RL-LOAD-HISTORY          # load command history from RL-HISTORY-FILE 
+    RL-SAVE-HISTORY          # save command history to RL-HISTORY-FFILE
+    RL-ADD-HISTORY           # add content of RL-INPUT to the history
+                             # should be called after RL-ACCEPT
