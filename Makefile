@@ -1,8 +1,8 @@
-default: lib
+default: test
+.PHONY: test clean
 
-
-test: 
-	ldpl -i=ldplnoise.cpp -o=ldplnoise-test test.lsc
+test: ldplnoise.cpp test.ldpl
+	ldpl -i=ldplnoise.cpp -o=ldplnoise-test test.ldpl
 	./ldplnoise-test
 
 clean:
