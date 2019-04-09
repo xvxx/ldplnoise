@@ -10,16 +10,15 @@ Only works on the `extensions` branch of https://github.com/dvkt/ldpl
 Usage
 -----
 
-Any LDPL program using this extension must declare these three variables, even if you're not going to use them:
+There's only one required variable: `RL-INPUT`. You must declare it before using this extension:
 
     DATA:
-    RL-INPUT is TEXT
-    RL-PROMPT is TEXT
-    RL-HISTORY-FILE is TEXT
+    RL-INPUT is EXTERNAL TEXT
 
-- `RL-INPUT` will be filled with the user's input after prompting them.
-- `RL-PROMPT` will default to `> ` and allows you to customize the prompt shown to users. Optional.
-- `RL-HISTORY-FILE` can be set by you to the location of the history file for this program. Optional.
+The optional variables are:
+
+- `RL-PROMPT` will default to `> ` and allows you to customize the prompt shown to users. 
+- `RL-HISTORY-FILE` can be set to the path to the history file for this program. 
 
 To actually use the library, call the `RL-ACCEPT` subroutine to prompt the user for input:
 
@@ -74,9 +73,9 @@ LDPL API
 
 Variables:
 
-    RL-PROMPT is TEXT        # prompt shown to user
-    RL-INPUT is TEXT         # the user's input after a RL-ACCEPT
-    RL-HISTORY-FILE is TEXT  # path to history file
+    RL-INPUT          # text entered by the user during RL-ACCEPT
+    RL-PROMPT         # text prompt shown to user. optional
+    RL-HISTORY-FILE   # text path to history file
 
 Subroutines:
 
