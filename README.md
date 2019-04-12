@@ -5,7 +5,7 @@ LDPL extension with linenoise support. linenoise is a lite version of readline, 
 
 This version wraps https://github.com/yhirose/cpp-linenoise.
 
-Only works on the `extensions` branch of https://github.com/dvkt/ldpl
+Only works with the latest `master` branch of https://github.com/lartu/ldpl
 
 Usage
 -----
