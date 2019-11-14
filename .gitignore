@@ -2,5 +2,8 @@ linenoise.o
 ldplnoise.o
 ldplnoise.a
 test-bin
+example-bin
 ldplnoise-test
+ldplnoise-example
 test-history
+example-history

@@ -1,12 +1,12 @@
-default: test
-.PHONY: test lib clean
+default: example
+.PHONY: example lib clean
 
-lib: ldplnoise.cpp test.ldpl
+lib: ldplnoise.cpp example.ldpl
 	c++ -std=gnu++11 -c ldplnoise.cpp -o ldplnoise.o
 
-test: ldplnoise.cpp test.ldpl
-	ldpl -o=ldplnoise-test test.ldpl
-	./ldplnoise-test
+example: ldplnoise.cpp example.ldpl
+	ldpl -o=ldplnoise-example example.ldpl
+	./ldplnoise-example
 
 clean:
 	rm -f {line,ldpl}noise.{o,a}

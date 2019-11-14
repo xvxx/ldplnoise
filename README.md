@@ -66,11 +66,11 @@ Example
 
     git clone https://github.com/dvkt/ldplnoise
     cd ldplnoise
-    make test
+    make example
 
 This should launch you into a basic prompt that echos what you type and remembers you history for that session. To exit, just type  "quit" or "exit", submit an empty line, or hit Ctrl-C.
 
-Check out `test.ldpl` to see an example of using the extension.
+Check out `example.ldpl` to see an example of using the extension.
 
 LDPL API
 --------
