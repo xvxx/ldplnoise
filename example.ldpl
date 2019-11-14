@@ -1,42 +1,42 @@
 extension "ldplnoise.cpp"
 
 DATA:
-CMDS IS NUMBER VECTOR
-RL-PROMPT IS EXTERNAL TEXT 
-RL-HISTORY-FILE IS EXTERNAL TEXT 
-RL-INPUT IS EXTERNAL TEXT 
+cmds is number vector
+rl-prompt is external text
+rl-history-file is external text
+rl-input is external text
 
 PROCEDURE:
-DISPLAY "\e[36;1mLDPLNOISE\e[0m" crlf
-STORE "\e[35;1m>>> \e[0m" IN RL-PROMPT
-STORE "test-history" IN RL-HISTORY-FILE
-CALL EXTERNAL RL-LOAD-HISTORY
+display "\e[36;1mldplnoise\e[0m" crlf
+store "\e[35;1m>>> \e[0m" in rl-prompt
+store "test-history" in rl-history-file
+call external rl-load-history
 
-STORE -1 IN CMDS:"quit"
-STORE -1 IN CMDS:"exit"
-STORE  1 IN CMDS:"help"
-STORE  1 IN CMDS:"?"
+store -1 in cmds:"quit"
+store -1 in cmds:"exit"
+store  1 in cmds:"help"
+store  1 in cmds:"?"
 
-SUB-PROCEDURE QUIT
-    CALL EXTERNAL RL-SAVE-HISTORY
-    EXIT 
-END SUB-PROCEDURE
+sub quit
+    call external rl-save-history
+    exit
+end sub
 
-CALL EXTERNAL RL-ACCEPT
-WHILE RL-INPUT IS NOT EQUAL TO "" DO
-    IF CMDS:RL-INPUT IS EQUAL TO -1 THEN
-        CALL QUIT
-    END IF
+call external rl-accept
+while rl-input is not equal to "" do
+    if cmds:rl-input is equal to -1 then
+        call quit
+    end if
 
-    IF CMDS:RL-INPUT IS EQUAL TO 1 THEN
-        DISPLAY "commands: " crlf "\texit - exit" crlf "\thelp - show help" 
-        STORE " " IN RL-INPUT
-        CONTINUE
-    END IF 
-        
-    CALL EXTERNAL RL-ADD-HISTORY
-    DISPLAY RL-INPUT CRLF
-    CALL EXTERNAL RL-ACCEPT
-REPEAT
+    if cmds:rl-input is equal to 1 then
+        display "commands: " crlf "\texit - exit" crlf "\thelp - show help"
+        store " " in rl-input
+        continue
+    end if
 
-CALL QUIT
+    call external rl-add-history
+    display rl-input crlf
+    call external rl-accept
+repeat
+
+call quit
