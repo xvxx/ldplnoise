@@ -1,31 +1,35 @@
 #include <iostream>
-#include <string>
 #include "linenoise.hpp"
+#include "ldpl-types.h"
 
 using std::string;
 
-string RL_INPUT;         // RL-INPUT
-string RL_PROMPT;        // RL-PROMPT
-string RL_HISTORY_FILE;  // RL-HISTORY-FILE
+ldpl_text RL_INPUT;         // RL-INPUT
+ldpl_text RL_PROMPT;        // RL-PROMPT
+ldpl_text RL_HISTORY_FILE;  // RL-HISTORY-FILE
+
+#define CSTR(txt) txt.str_rep().c_str()
 
 void RL_LOAD_HISTORY() 
 {
-    linenoise::LoadHistory(RL_HISTORY_FILE.c_str());
+    linenoise::LoadHistory(CSTR(RL_HISTORY_FILE));
 }
 
 void RL_SAVE_HISTORY()
 {
-    linenoise::SaveHistory(RL_HISTORY_FILE.c_str());
+    linenoise::SaveHistory(CSTR(RL_HISTORY_FILE));
 }
 
 void RL_ADD_HISTORY()
 {
-    linenoise::AddHistory(RL_INPUT.c_str());
+    linenoise::AddHistory(CSTR(RL_INPUT));
 }
 
 void RL_ACCEPT() 
 {
     if(RL_PROMPT.empty()) RL_PROMPT = "> ";
     linenoise::SetHistoryMaxLen(100);
-    linenoise::Readline(RL_PROMPT.c_str(), RL_INPUT);
+    string input = RL_INPUT.str_rep();
+    linenoise::Readline(CSTR(RL_PROMPT), input);
+    RL_INPUT = input;
 }

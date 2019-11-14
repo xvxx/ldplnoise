@@ -1,3 +1,5 @@
+extension "ldplnoise.cpp"
+
 DATA:
 CMDS IS NUMBER VECTOR
 RL-PROMPT IS EXTERNAL TEXT 
