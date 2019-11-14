@@ -1,11 +1,9 @@
 LDPLNOISE
 =========
 
-LDPL extension with linenoise support. linenoise is a lite version of readline, originally at https://github.com/antirez/linenoise.
+**LDPL 4.3** extension with linenoise support. linenoise is a lite version of readline, originally at https://github.com/antirez/linenoise.
 
 This version wraps https://github.com/yhirose/cpp-linenoise.
-
-Only works with the latest `master` branch of https://github.com/lartu/ldpl
 
 Usage
 -----
@@ -17,8 +15,10 @@ There's only one required variable: `RL-INPUT`. You must declare it before using
 
 The optional variables are:
 
-- `RL-PROMPT` will default to `> ` and allows you to customize the prompt shown to users. 
-- `RL-HISTORY-FILE` can be set to the path to the history file for this program. 
+- `RL-PROMPT`
+   - Defaults to `> ` and allows you to customize the prompt shown to users. 
+- `RL-HISTORY-FILE`
+   - Can be set to the path to the history file for this program. 
 
 To actually use the library, call the `RL-ACCEPT` subroutine to prompt the user for input:
 
@@ -50,12 +50,16 @@ To persist history across sessions, you need to save and load a history file. To
 Setup
 -----
 
-The easy way to include LDPLNOISE in your project is to just clone this repo into it and tell the the `ldpl` compiler where to find `ldplnoise.cpp`:
+The easy way to include LDPLNOISE in your project is to clone this repo into it and tell the the `ldpl` compiler where to find `ldplnoise.cpp`:
 
     cd my-great-ldpl-project
     git clone https://github.com/dvkt/ldplnoise
     ldpl -i=ldplnoise/ldplnoise.cpp my-code.ldpl
     ./my-code-bin
+
+You can also use the `EXTENSION` statement in your LDPL files:
+
+    EXTENSION "ldplnoise.cpp"
 
 Example
 -------
