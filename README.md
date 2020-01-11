@@ -16,9 +16,9 @@ There's only one required variable: `RL-INPUT`. You must declare it before using
 The optional variables are:
 
 - `RL-PROMPT`
-   - Defaults to `> ` and allows you to customize the prompt shown to users. 
+   - Defaults to `> ` and allows you to customize the prompt shown to users.
 - `RL-HISTORY-FILE`
-   - Can be set to the path to the history file for this program. 
+   - Can be set to the path to the history file for this program.
 
 To actually use the library, call the `RL-ACCEPT` subroutine to prompt the user for input:
 
@@ -53,7 +53,7 @@ Setup
 The easy way to include LDPLNOISE in your project is to clone this repo into it and tell the the `ldpl` compiler where to find `ldplnoise.cpp`:
 
     cd my-great-ldpl-project
-    git clone https://github.com/dvkt/ldplnoise
+    git clone https://github.com/xvxx/ldplnoise
     ldpl -i=ldplnoise/ldplnoise.cpp my-code.ldpl
     ./my-code-bin
 
@@ -64,7 +64,7 @@ You can also use the `EXTENSION` statement in your LDPL files:
 Example
 -------
 
-    git clone https://github.com/dvkt/ldplnoise
+    git clone https://github.com/xvxx/ldplnoise
     cd ldplnoise
     make example
 
@@ -83,8 +83,8 @@ Variables:
 
 Subroutines:
 
-    RL-ACCEPT                # main readline()-like prompt function. 
-    RL-LOAD-HISTORY          # load command history from RL-HISTORY-FILE 
+    RL-ACCEPT                # main readline()-like prompt function.
+    RL-LOAD-HISTORY          # load command history from RL-HISTORY-FILE
     RL-SAVE-HISTORY          # save command history to RL-HISTORY-FFILE
     RL-ADD-HISTORY           # add content of RL-INPUT to the history
                              # should be called after RL-ACCEPT
